@@ -3,7 +3,6 @@ import 'package:serinus/serinus.dart';
 
 /// A service that provides access to environment variables.
 class ConfigService extends Provider {
-
   @override
   bool get isGlobal => true;
 
@@ -13,15 +12,15 @@ class ConfigService extends Provider {
   ConfigService(this._dotEnv);
 
   /// Get the value of an environment variable or throw an exception if it is not set.
-  /// 
+  ///
   /// Throws a [PreconditionFailedException] if the environment variable is not set.
-  /// 
+  ///
   /// Example:
-  /// 
+  ///
   /// ```dart
   /// final value = configService.getOrThrow('TEST');
   /// ```
-  /// 
+  ///
   /// If the environment variable `TEST` is not set, this will throw a [PreconditionFailedException].
   String getOrThrow(String key) {
     return _dotEnv.getOrElse(
@@ -31,13 +30,13 @@ class ConfigService extends Provider {
   }
 
   /// Get the value of an environment variable or return `null` if it is not set.
-  /// 
+  ///
   /// Example:
-  /// 
+  ///
   /// ```dart
   /// final value = configService.getOrNull('TEST');
   /// ```
-  /// 
+  ///
   /// If the environment variable `TEST` is not set, this will return `null`.
   String? getOrNull(String key) {
     return _dotEnv[key];

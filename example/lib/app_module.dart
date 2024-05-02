@@ -11,9 +11,8 @@ class AppModule extends Module {
           controllers: [AppController()],
           providers: [
             DeferredProvider(
-              (context) async => AppProvider(context.use<ConfigService>()), 
-              inject: [ConfigService]
-            )
+                (context) async => AppProvider(context.use<ConfigService>()),
+                inject: [ConfigService])
           ],
         );
 }

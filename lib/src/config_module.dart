@@ -4,17 +4,17 @@ import 'package:serinus_config/src/config_service.dart';
 
 /// A module that provides a [ConfigService] that can be used to access environment variables.
 class ConfigModule extends Module {
-
   /// Create a new instance of [ConfigModule].
-  /// 
+  ///
   /// Optionally, you can pass a [ConfigModuleOptions] object to configure the module.
   ConfigModule({ConfigModuleOptions? options}) : super(options: options);
-  
+
   @override
+
   /// Register the [ConfigService] provider.
-  /// 
+  ///
   /// This method will load the environment variables from the `.env` file and register the [ConfigService] provider.
-  /// 
+  ///
   /// Optionally, you can pass a [ConfigModuleOptions] object to configure the module.
   Future<Module> registerAsync() async {
     final moduleOptions =
@@ -28,7 +28,7 @@ class ConfigModule extends Module {
 }
 
 /// Options for the [ConfigModule].
-/// 
+///
 /// You can pass a [dotEnvPath] to specify the path to the `.env` file.
 class ConfigModuleOptions extends ModuleOptions {
   final String dotEnvPath;
