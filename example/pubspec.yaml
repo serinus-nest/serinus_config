@@ -1,0 +1,12 @@
+name: echo
+description: ''
+
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  serinus: 0.2.1
+  serinus_config:
+    path: ../
+  
