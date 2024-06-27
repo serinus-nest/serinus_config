@@ -14,13 +14,13 @@ class MainController extends Controller {
     on(TestRoute(), (context) async {
       final configService = context.use<ConfigService>();
       final value =
-          configService.getOrThrow(context.queryParameters['key'] ?? 'TEST');
+          configService.getOrThrow(context.query['key'] ?? 'TEST');
       return Response.text(value);
     });
     on(TestRoute(path: '/null'), (context) async {
       final configService = context.use<ConfigService>();
       final value =
-          configService.getOrNull(context.queryParameters['key'] ?? 'TEST');
+          configService.getOrNull(context.query['key'] ?? 'TEST');
       return Response.text(value ?? 'null');
     });
   }
